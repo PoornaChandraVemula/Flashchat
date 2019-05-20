@@ -11,6 +11,7 @@ target 'Flash Chat' do
     pod 'Firebase/Database'
     pod 'SVProgressHUD'
     pod 'ChameleonFramework'
+    pod 'Toast'
 
 end
 post_install do |installer|

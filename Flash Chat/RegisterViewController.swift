@@ -40,10 +40,16 @@ class RegisterViewController: UIViewController {
             
             if error != nil {
                 print(error!)
+                 SVProgressHUD.dismiss()
+                let alert = UIAlertController(title: "Warning", message:"Unable to connect. Please, try again", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
             }
             else {
                 print("Registration Successful!")
                 SVProgressHUD.dismiss()
+                
                 self.performSegue(withIdentifier: "goToChat", sender: self)
             }
         }
